@@ -1,4 +1,4 @@
-class MessagesController < ApplicationConroller
+class MessagesController < ApplicationController
 
   def index
     @messages = Message.all
