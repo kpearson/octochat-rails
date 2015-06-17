@@ -5,3 +5,4 @@ This app is a part of our microservice architecture. You need the other app whic
 ### Installation
 * Download and run `npm install nodemon`
 * Ensure your redis server is running locally
+* Run your rails server on port 8000 `rails s -p 8000`
