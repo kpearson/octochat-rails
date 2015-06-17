@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<script>
+  var socket = io('<%= ENV["SOCKET_URL"] %>');
+</script>
 
 <%= yield %>
 
