@@ -1,5 +1,25 @@
 <h1> Messages: </h1>
 
-<% @messages.each do |message| %>
-  <%= message.body %>
+<div class="messages">
+  <ul>
+    <% @messages.each do |m| %>
+    <li><p><%= m.body %></p></li>
+    <% end %>
+  </ul>
+</div>
+
+<%= form_for @message, remote: true do |f| %>
+  <%= f.text_field(:body) %>
+  <%= f.submit %>
 <% end %>
+
+
+<script>
+  $(document).ready(function() {
+    $("#new_message").on("ajax:complete", function(e, data, status, xhr) {
+      var message = JSON.parse(data.responseText).message;
+      $(".messages ul").append("<li><p>" + message.body + "</p></li>");
+      $("#message_body").val("");
+    });
+  });
+</script>
