@@ -9,6 +9,7 @@ gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "socket.io-rails"
 gem "figaro"
+gem "puma"
 
 group :development, :test do
   gem "pry-rails"
@@ -19,3 +20,10 @@ group :development, :test do
   gem "spring"
 end
 
+group :production do
+  gem "capistrano",         require: false
+  gem "capistrano-rvm",     require: false
+  gem "capistrano-rails",   require: false
+  gem "capistrano-bundler", require: false
+  gem "capistrano3-puma",   require: false
+end
