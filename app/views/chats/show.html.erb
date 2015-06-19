@@ -1,0 +1,19 @@
+<h1> Messages: </h1>
+
+<div class="messages">
+  <ul>
+    <% @messages.each do |m| %>
+    <li><p><%= m.body %></p></li>
+    <% end %>
+  </ul>
+</div>
+
+<%= form_for @message, remote: true do |f| %>
+  <%= f.hidden_field :slug, value: slug %>
+  <%= f.text_field(:body) %>
+  <%= f.submit %>
+<% end %>
+
+<script>
+  var socket = io('<%= @socket %>');
+</script>
