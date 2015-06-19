@@ -6,10 +6,11 @@ class MessagesController < ApplicationController
   end
 
   def create
-    message = Message.create(body: params[:message][:body])
+    Message.create(body: params[:message][:body])
+    message = {body: params[:message][:body], org: params[:message][:slug]}
     REDIS.publish('channel', message.to_json)
     respond_to do |format|
-      format.js { render json: { message: message } }
+      format.json { render json: { message: message } }
     end
   end
 end
