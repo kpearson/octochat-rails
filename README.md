@@ -13,6 +13,6 @@ This app is a part of our microservice architecture. You need the other app whic
 
 ### Local Dev Installation
 * Download and run `npm install nodemon`
-* With your favorit environmental variable management tool and add the url to the `SOCKET_URL`
+* With your favorit environmental variable management tool add the url to the `SOCKET_URL`
 * Ensure your redis server is running locally
 * Run your rails server on any open port besides 3000 `rails s -p 8000`
