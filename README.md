@@ -1,7 +1,7 @@
 # Octochat
 
-[Trey Tomlinson](https://github.com/treyx)
-[Jeff Gu](https://github.com/jgu2160)
+[Trey Tomlinson](https://github.com/treyx)<br>
+[Jeff Gu](https://github.com/jgu2160)<br>
 [Kit Pearson](https://github.com/kpearson)
 
 
