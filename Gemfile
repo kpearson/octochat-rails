@@ -11,6 +11,8 @@ gem "socket.io-rails"
 gem "figaro"
 gem "puma"
 gem "redis"
+gem "execjs"
+gem "therubyracer"
 
 group :development, :test do
   gem "pry-rails"
