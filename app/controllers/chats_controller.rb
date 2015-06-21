@@ -3,7 +3,11 @@ class ChatsController < ApplicationController
   def show
     @messages = Message.all
     @message = Message.new
-    @socket = "#{ENV["SOCKET_URL"]}/#{params[:slug]}"
+    if Rails.env.production?
+      @socket = "#{ENV["SOCKET_URL"]}/#{slug}"
+    else
+      @socket = "http://localhost:3000/#{slug}"
+    end
   end
 
   helper_method :slug
