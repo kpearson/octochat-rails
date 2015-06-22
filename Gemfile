@@ -13,6 +13,7 @@ gem "puma"
 gem "redis"
 gem "execjs"
 gem "therubyracer"
+gem 'materialize-sass'
 
 group :development, :test do
   gem "pry-rails"
