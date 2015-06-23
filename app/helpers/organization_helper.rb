@@ -1,8 +1,8 @@
 require "hurley"
 require "json"
 
-class OrganizationHelper
-  def getNames(orgs_url)
+module OrganizationHelper
+  def self.getNames(orgs_url)
     hurley = Hurley::Client.new
     body = hurley.get(orgs_url).body
     org_array = JSON.parse(body)

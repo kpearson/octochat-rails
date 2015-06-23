@@ -2,19 +2,25 @@
   <nav>
     <a href="#" class="brand-logo">Octochat</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li>
-          <%= link_to "login", "/auth/github" %>
-      </li>
-      <li>
-        <div id="dropdown-div" class="col s3 float-right">
-          <ul id="dropdown2" class="dropdown-content">
-            <li><a href="#!">one<span class="badge">1</span></a></li>
-            <li><a href="#!">two<span class="new badge">1</span></a></li>
-            <li><a href="#!">three</a></li>
-          </ul>
-          <a id="dropdown" class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>
-        </div>
-      </li>
+      <% if current_user %>
+        <li>
+          <div id="dropdown-div" class="col s3 float-right">
+            <ul id="dropdown2" class="dropdown-content">
+              <% @orgs.each do |org| %>
+                <li><a href="/<%= org.name %>"><%= org.name %></a></li>
+              <% end %>
+              <li>
+                <%= link_to "Logout", logout_path %>
+              </li>
+            </ul>
+            <a id="dropdown" class="btn dropdown-button" href="#!" data-activates="dropdown2">Organizations<i class="mdi-navigation-arrow-drop-down right"></i></a>
+          </div>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to 'Login', '/auth/github' %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </div>

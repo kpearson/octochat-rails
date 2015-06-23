@@ -3,6 +3,8 @@ class ChatsController < ApplicationController
   def show
     @messages = Message.all
     @message = Message.new
+    session[:org_id] = Organization.find_by_name(slug).id if slug
+    @orgs = current_user.organizations if current_user
     if Rails.env.production?
       @socket = "#{ENV["SOCKET_URL"]}/#{slug}"
     else
@@ -14,5 +16,4 @@ class ChatsController < ApplicationController
   def slug
     params[:slug]
   end
-
 end
