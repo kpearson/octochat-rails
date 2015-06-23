@@ -14,6 +14,8 @@ gem "redis"
 gem "execjs"
 gem "therubyracer"
 gem 'materialize-sass'
+gem 'omniauth-github'
+gem 'hurley'
 
 group :development, :test do
   gem "pry-rails"
