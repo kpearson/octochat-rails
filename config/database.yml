@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: octochat-rails_production
-  username: octochat-rails
+  username: deployment
   password: <%= ENV['OCTOCHAT-RAILS_DATABASE_PASSWORD'] %>
